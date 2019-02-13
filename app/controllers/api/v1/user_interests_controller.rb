@@ -5,7 +5,7 @@ class Api::V1::UserInterestsController < ApplicationController
     end
 
     def userinterests_params
-        params.permit(:event_id, :user_id)
+        params.permit(:interest_id, :user_id)
     end
     
     def define_current_userinterests

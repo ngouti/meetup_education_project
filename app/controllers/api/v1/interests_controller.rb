@@ -23,7 +23,7 @@ class Api::V1::InterestsController < ApplicationController
     end
     
     def interest_params
-        params.require(:interest).permit(:interestname, :email, :password)
+        params.require(:interest).permit(:name)
     end
     
     def define_current_interest

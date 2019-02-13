@@ -5,7 +5,7 @@ class Api::V1::EventInterestsController < ApplicationController
     end
 
     def eventinterest_params
-        params.permit(:event_id, :user_id)
+        params.permit(:event_id, :interest_id)
     end
     
     def define_current_eventinterest
