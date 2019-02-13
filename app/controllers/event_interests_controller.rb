@@ -1,0 +1,2 @@
+class EventInterestsController < ApplicationController
+end

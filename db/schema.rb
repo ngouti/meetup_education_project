@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_001823) do
+ActiveRecord::Schema.define(version: 2019_02_13_170007) do
+
+  create_table "event_interests", force: :cascade do |t|
+    t.integer "interest_id"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_interests_on_event_id"
+    t.index ["interest_id"], name: "index_event_interests_on_interest_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.datetime "date"
@@ -18,6 +27,12 @@ ActiveRecord::Schema.define(version: 2019_02_13_001823) do
     t.string "description"
     t.string "location"
     t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +53,15 @@ ActiveRecord::Schema.define(version: 2019_02_13_001823) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_user_events_on_event_id"
     t.index ["user_id"], name: "index_user_events_on_user_id"
+  end
+
+  create_table "user_interests", force: :cascade do |t|
+    t.integer "interest_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["interest_id"], name: "index_user_interests_on_interest_id"
+    t.index ["user_id"], name: "index_user_interests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
