@@ -1,0 +1,2 @@
+class UserArrangementsController < ApplicationController
+end
