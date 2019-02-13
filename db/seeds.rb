@@ -9,10 +9,10 @@
 # Event.destroy_all
 
 
-user1 = User.create(username: "emma", email: "emma@example.com", password: "0000", name: "Emma Gouti" , school: "Clear Brook High School")
-user2 = User.create(username: "claire", email: "claire@example.com", password: "0000", name: "Claire Nguyen" , school: "Clear Creek High School")
-user3 = User.create(username: "jakob", email: "jakob@example.com", password: "0000", name: "Jakob Bellamy" , school: "Clear Lake High School")
-user4 = User.create(username: "ryan", email: "ryan@example.com", password: "0000", name: "Ryan Daley" , school: "Clear Springs High School")
+# user1 = User.create(username: "emma", email: "emma@example.com", password: "0000", name: "Emma Gouti" , school: "Clear Brook High School")
+# user2 = User.create(username: "claire", email: "claire@example.com", password: "0000", name: "Claire Nguyen" , school: "Clear Creek High School")
+# user3 = User.create(username: "jakob", email: "jakob@example.com", password: "0000", name: "Jakob Bellamy" , school: "Clear Lake High School")
+# user4 = User.create(username: "ryan", email: "ryan@example.com", password: "0000", name: "Ryan Daley" , school: "Clear Springs High School")
 
 
 # maze10x10 = Maze.create({rows: 10, columns: 10})
