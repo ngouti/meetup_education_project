@@ -1,2 +1,0 @@
-class EventInterestsController < ApplicationController
-end

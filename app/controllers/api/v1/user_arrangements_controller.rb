@@ -1,4 +1,4 @@
-class UserArrangementsController < ApplicationController
+class Api::V1::UserArrangementsController < ApplicationController
     def create
         userarrangement = UserArrangements.create(userarrangement_params)
         render json: userarrangement
