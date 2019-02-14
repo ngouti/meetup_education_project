@@ -1,8 +1,11 @@
 class Api::V1::UsersController < ApplicationController
+    before_action :define_current_user
+
+    skip_before_action :authenticate_user, only: [ :create ]
 
     def create
         user = User.create(user_params)
-        render json: user
+        render json: user, methods: [:token]
     end
     
     def index
