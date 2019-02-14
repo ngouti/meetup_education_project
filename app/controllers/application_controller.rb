@@ -3,11 +3,7 @@ class ApplicationController < ActionController::Base
     before_action :authenticate
     skip_before_action :verify_authenticity_token
 
-    def authenticate
-        if !current_user
-            render json: { error: true, message: 'Please Login'}
-        end
-    end
+    
 
     def decode_token(token)
         JWT.decode(token, 'secret')
@@ -24,6 +20,10 @@ class ApplicationController < ActionController::Base
         end
     end
 
-
+    def authenticate
+        if !current_user
+            render json: { error: true, message: 'Please Login'}
+        end
+    end
    
 end
