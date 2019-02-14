@@ -1,4 +1,4 @@
-class Api::V1::EventInterestsController < ApplicationController
+class EventInterestsController < ApplicationController
     def create
         eventinterest = EventInterest.create(eventinterest_params)
         render json: eventinterest

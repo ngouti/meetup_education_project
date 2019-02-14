@@ -1,4 +1,4 @@
-class Api::V1::UserEventsController < ApplicationController
+class UserEventsController < ApplicationController
     def create
         userevent = UserEvent.create(userevent_params)
         render json: userevent

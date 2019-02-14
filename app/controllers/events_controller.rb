@@ -1,4 +1,4 @@
-class Api::V1::EventsController < ApplicationController
+class EventsController < ApplicationController
 
     def create
         event = Event.create(event_params)

@@ -1,4 +1,4 @@
-class Api::V1::UserInterestsController < ApplicationController
+class UserInterestsController < ApplicationController
     def create
         userinterests = UserInterests.create(userinterests_params)
         render json: userinterests

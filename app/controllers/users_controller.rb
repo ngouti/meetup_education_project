@@ -1,11 +1,11 @@
-class Api::V1::UsersController < ApplicationController
+class UsersController < ApplicationController
     before_action :define_current_user
 
-    skip_before_action :authenticate_user, only: [ :create ]
+    skip_before_action :authenticate, only: [ :create ]
 
     def create
         user = User.create(user_params)
-        render json: user, methods: [:token]
+        render json: user, methods: [ :token ]
     end
     
     def index
@@ -27,7 +27,7 @@ class Api::V1::UsersController < ApplicationController
     end
     
     def user_params
-        params.require(:user).permit(:username, :email, :password, :name, :school)
+        params.permit(:username, :email, :password, :name, :school)
     end
     
     def define_current_user
