@@ -1,10 +1,26 @@
 class EventsController < ApplicationController
 
-    def create
+    def create_organizer
         event = Event.create(event_params)
+        
+        event.organizers << current_user
+        # event.attendees << current_user
+        event.save
         render json: event
     end
 
+    # redirect_to???
+
+    def create_attendee
+        event = Event.create(event_params)
+        
+        event.attendees << current_user
+        # event.attendees << current_user
+        event.save
+        render json: event
+    end
+
+    
     def index
         render json: Event.all
     end
