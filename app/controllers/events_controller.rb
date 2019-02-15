@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
 
-    def create_organizer
+    before_action :define_current_event
+
+    def create
         event = Event.create(event_params)
         
         event.organizers << current_user
@@ -12,12 +14,11 @@ class EventsController < ApplicationController
     # redirect_to???
 
     def create_attendee
-        event = Event.create(event_params)
         
-        event.attendees << current_user
+        current_event.attendees << current_user
         # event.attendees << current_user
-        event.save
-        render json: event
+        # event.save
+        render json: current_event
     end
 
     
@@ -26,7 +27,9 @@ class EventsController < ApplicationController
     end
 
     def show 
-        render json: current_event
+        showevent = Event.all.find(params[:id])
+            
+        render json: showevent
     end
 
     def update
@@ -39,7 +42,7 @@ class EventsController < ApplicationController
         render json: current_event
     end
 
-    def current_event
+    def define_current_event
         if params[:id]
             @current_event = Event.find(params[:id])
         else
