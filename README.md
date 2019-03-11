@@ -22,4 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# meetup_education_frontend
+# meetup_education_frontend:
+https://github.com/ngouti/meetup_education_frontend
